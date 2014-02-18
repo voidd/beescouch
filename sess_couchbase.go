@@ -75,7 +75,7 @@ func (cs *CouchbaseSessionStore) SessionRelease(w http.ResponseWriter) {
 		return
 	}
 
-	cs.b.Set(cs.sid, int(cs.maxlifetime), string(bo))
+	cs.b.Set(cs.sid, int(cs.maxlifetime), bo)
 }
 
 func (cp *CouchbaseProvider) getBucket() *couchbase.Bucket {
